@@ -7,8 +7,9 @@ const { User } = require('./models');
 const router = express.Router();
 
 const jsonParser = bodyParser.json();
+const jwtAuth = passport.authenticate('jwt', {session: false});
 
-router.get('/goals', (req, res) => {
+router.get('/goals', jwtAuth, (req, res) => {
     Goals
         .find()
         .limit(10)
@@ -24,7 +25,7 @@ router.get('/goals', (req, res) => {
         });
 });
 
-router.post('/goals', jsonParser, (req, res) => {
+router.post('/goals', jwtAuth, jsonParser, (req, res) => {
     const requiredFields = ['goal', 'mantra'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
@@ -47,7 +48,7 @@ router.post('/goals', jsonParser, (req, res) => {
         });
 });
 
-router.put('/goals/:id', jsonParser, (req, res) => {
+router.put('/goals/:id', jwtAuth, jsonParser, (req, res) => {
     const requiredFields = ['goal', 'mantra', 'id'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
