@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.error-msg {
+    color: red;
+}
+
+html {
+    background: url(images/goalboard.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 60px;
+    color: black;
+    font-weight: bolder;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}

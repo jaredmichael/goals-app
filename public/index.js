@@ -12,27 +12,125 @@ function displayGoals(responseJson) {
     )};
 };
 
-function createGoal(goal, mantra) {
-    console.log();     
-    window.location='/home.html';
+function getGoals() {
+    fetch('/api/goals/', {
+        method: 'GET',
+        headers: {'Authorization': 'bearer ' + localStorage.authToken}
+    })
+        .then(response => {
+            if (response.ok) {
+            return response.json();
+            }
+            throw new Error(response.statusText);
+        })
+        .then(responseJson => displayGoals(responseJson))
+        .catch(err => {
+            $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
+        });
 }
 
-function userAuthentication(userName, password) {
-    
-  
-    fetch(url)
-      .then(response => {
+function createGoal(goalName, mantraText) {
+    console.log(goalName + mantraText);
+    const data = {
+            id: 'uuid',
+            goal: goalName,
+            goalId: "uuid",
+            mantra: mantraText,
+            status: "inprogress"
+    }
+
+    fetch({ url: '/api/goals', 
+            method: 'POST', 
+            body: JSON.stringify(data), 
+            headers: {'Content-Type': 'application/json',
+            'Authorization': 'bearer ' + localStorage.authToken}})
+            
+    .then(response => {
         if (response.ok) {
         return response.json();
         }
         throw new Error(response.statusText);
-      })
-      .then(responseJson => displayGoals(responseJson))
-      .catch(err => {
+    })
+    .then(responseJson => displayGoals(responseJson))
+    .catch(err => {
         $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
-      });
+    });
 }
 
+
+function editGoal(data) {
+    console.log(data);
+    
+    fetch({ url: '/api/goals',
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {'Content-Type': 'application/json',
+            'Authorization': 'bearer ' + localStorage.authToken}})
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error(response.statusText);
+    })
+    .then(responseJson => displayGoals(responseJson))
+    .catch(err => {
+        $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
+    });
+}
+
+function login(username, password) {
+    console.log(username, password);
+
+    const data = {
+        username, password 
+    }
+    
+    fetch("/api/auth/login", {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {'Content-Type': 'application/json',
+            'Authorization': 'bearer ' + localStorage.authToken}})
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error(response.statusText);
+    })
+    .then(responseJson => {
+        localStorage.authToken = responseJson.authToken;
+        window.location='/home.html';
+    })
+    .catch(err => {
+        $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
+    });
+}
+
+function signUp(username, password) {
+    console.log(username, password);
+
+    const data = {
+        username, password 
+    }
+    
+    fetch("/api/users", {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {'Content-Type': 'application/json',
+            'Authorization': 'bearer ' + localStorage.authToken}})
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error(response.statusText);
+    })
+    .then(responseJson => {
+        login(username, password);
+    
+    })
+    .catch(err => {
+        $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
+    });
+}
 
 function newGoal() {
     window.location='/new-goal.html';
@@ -46,23 +144,34 @@ function logOut() {
 function watchForm() {
     $('#log-in').submit(event => {
       event.preventDefault();
-      const userName = $('#js-user-name').val();
-      const password = $('#js-password').val();
-      window.location='/home.html';
+      const userName = $('.js-user-name-login').val();
+      const password = $('.js-password-login').val();
+      login(userName, password);
     });
 
     $('#register').submit(event => {
         event.preventDefault();
-        const userName = $('#js-user-name').val();
-        const password = $('#js-password').val();
-        window.location='/home.html';
+        const userName = $('.js-user-name').val();
+        const password = $('.js-password').val();
+        signUp(userName, password);
     });
 
     $("#new-goal").submit(event => {
         event.preventDefault();
-        const goal = $('.js-goal-name').val();
-        const mantra = $('.js-mantra').val();
+        const goalName = $('.js-goal-name').val();
+        const mantraText = $('.js-mantra').val();
         createGoal(goal, mantra);
+        window.location='/home.html';
+    });
+
+    $(".js-delete").submit(event => {
+        event.preventDefault();
+        delete this.data;
+    });
+
+    $(".js-edit").submit(event => {
+        event.password();
+        editGoal(this.data);
     });
 }
   
