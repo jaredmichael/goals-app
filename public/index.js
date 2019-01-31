@@ -32,14 +32,14 @@ function getGoals() {
 function createGoal(goalName, mantraText) {
     console.log(goalName + mantraText);
     const data = {
-            id: 'uuid',
             goal: goalName,
-            goalId: "uuid",
             mantra: mantraText,
             status: "inprogress"
     }
 
-    fetch({ url: '/api/goals', 
+
+    return fetch('/api/goals',
+        { 
             method: 'POST', 
             body: JSON.stringify(data), 
             headers: {'Content-Type': 'application/json',
@@ -51,17 +51,24 @@ function createGoal(goalName, mantraText) {
         }
         throw new Error(response.statusText);
     })
-    .then(responseJson => displayGoals(responseJson))
+    .then(responseJson => window.location='/home.html')
     .catch(err => {
         $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
     });
 }
 
 
-function editGoal(data) {
-    console.log(data);
+function editGoal(goalId, goalName, mantraText) {
+    console.log(goalId, goalName, mantraText);
+    goalId = window.location.search.split('=')[1]
+    const data = {
+        id: goalId,
+        goal: goalName,
+        mantra: mantraText
+    }
     
-    fetch({ url: '/api/goals',
+    fetch('/api/goals/' + goalId, 
+        {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {'Content-Type': 'application/json',
@@ -72,7 +79,7 @@ function editGoal(data) {
         }
         throw new Error(response.statusText);
     })
-    .then(responseJson => displayGoals(responseJson))
+    .then(responseJson => window.location='/home.html')
     .catch(err => {
         $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
     });
@@ -160,8 +167,15 @@ function watchForm() {
         event.preventDefault();
         const goalName = $('.js-goal-name').val();
         const mantraText = $('.js-mantra').val();
-        createGoal(goal, mantra);
-        window.location='/home.html';
+        createGoal(goalName, mantraText);
+    });
+
+    $("#edit-goal").submit(event => {
+        event.preventDefault();
+        const goalName = $('.js-goal-name').val();
+        const mantraText = $('.js-mantra').val();
+        const goalId = $('.js-id').val();
+        editGoal(goalId, goalName, mantraText);
     });
 
     $(".js-delete").submit(event => {
