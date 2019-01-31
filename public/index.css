@@ -1,19 +1,19 @@
 * {
     box-sizing: border-box;
-    font-family: 'Permanent Marker', cursive; 
+    font-family: 'Permanent Marker', cursive;
 }
 
 .error-msg {
     color: red;
 }
 
-html { 
-    background: url(images/goalboard.jpg) no-repeat center center fixed; 
+html {
+    background: url(images/goalboard.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 80%;
+    height: 100%;
 }
 
 h1 {

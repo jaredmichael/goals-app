@@ -2,14 +2,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const { User } = require('./models');
+const { GoalPost } = require('./models');
 
 const router = express.Router();
 
+const passport = require('passport')
 const jsonParser = bodyParser.json();
+const jwtAuth = passport.authenticate('jwt', {session: false});
 
-router.get('/goals', (req, res) => {
-    Goals
+router.get('/', jwtAuth, (req, res) => {
+    GoalPost
         .find()
         .limit(10)
         .then(goals => {
@@ -24,7 +26,7 @@ router.get('/goals', (req, res) => {
         });
 });
 
-router.post('/goals', jsonParser, (req, res) => {
+router.post('/', jwtAuth, jsonParser, (req, res) => {
     const requiredFields = ['goal', 'mantra'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
@@ -35,7 +37,7 @@ router.post('/goals', jsonParser, (req, res) => {
         }
     }
 
-    Goal
+    GoalPost
         .create({
             goal: req.body.goal,
             mantra: req.body.mantra
@@ -47,11 +49,11 @@ router.post('/goals', jsonParser, (req, res) => {
         });
 });
 
-router.put('/goals/:id', jsonParser, (req, res) => {
+router.put('/:id', jwtAuth, jsonParser, (req, res) => {
     const requiredFields = ['goal', 'mantra', 'id'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
-        if (!(field in req.data)) {
+        if (!(field in req.body)) {
             const message = `Missing \`${field}\` in request body`
             console.error(message);
             return res.status(400).json({ message: message });
@@ -59,7 +61,7 @@ router.put('/goals/:id', jsonParser, (req, res) => {
     }
 
     const toUpdate = {};
-    updateableFields = ['goal', 'mantra'];
+    const updateableFields = ['goal', 'mantra'];
 
     updateableFields.forEach(field => {
         if (field in req.body) {
@@ -67,14 +69,14 @@ router.put('/goals/:id', jsonParser, (req, res) => {
         }
     });
 
-    Goal
+    GoalPost
         .findByIdAndUpdate(req.params.id, { $set: toUpdate })
         .then(goal => res.status(204).end())
         .catch(err => res.status(500).json({ message: 'Internal server error' }));
 });
 
-router.delete('/goals/:id', (req, res) => {
-    Goal
+router.delete('/:id', (req, res) => {
+    GoalPost
         .findByIdAndRemove(req.params.id)
         .then(goal => res.status(204).end())
         .catch(err => res.status(500).json({ message: 'Internal server error' }));
