@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .error-msg {
@@ -18,9 +18,124 @@ html {
 
 h1 {
     font-family: 'Permanent Marker', cursive;
-    font-size: 60px;
-    color: black;
+    font-size: 100px;
+    font-weight: bolder;
+    margin-bottom: 0px;
+    margin-top: 190px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 32px;
     font-weight: bolder;
     margin-bottom: 0px;
     margin-top: 0px;
+    margin-left: 18px;
+    text-align: center;
+}
+
+section {
+    text-align: center;
+}
+
+legend {
+    font-size: 24px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.js-goal-name {
+    font-size: 18px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.submit-new-goal {
+    margin-top: 10px;
+    background-color: black;
+    width: 100%;
+    font-size: 24px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: red;
+}
+
+textarea {
+    padding-top: 2px;
+    border-top-width: 1px;
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    margin-top: 220px;
+    margin-bottom: 80px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#new-goal, li {
+    margin-top: 220px;
+    margin-bottom: 80px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+#js-new-goal, #log-out {
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+nav {
+    overflow: hidden;    
+    position: fixed;
+    bottom: 0;
+    width: 100%
+}
+
+nav #js-new-goal {
+    float: left;
+    display: block;
+}
+
+nav #log-out {
+    float: right;
+    display: block;
+}
+
+.index {
+    margin-top: 220px;
+    margin-bottom: 80px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#register input, #log-in input {
+    font-size: 20px;
+    width: 30%;
+    padding-left: 5px;
 }
