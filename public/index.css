@@ -9,49 +9,65 @@
 
 html {
     background: url(images/goalboard.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100%;
+    background-size: 640px 920px;
 }
 
 h1 {
-    font-family: 'Permanent Marker', cursive;
     font-size: 100px;
     font-weight: bolder;
     margin-bottom: 0px;
-    margin-top: 190px;
+    margin-top: 140px;
     text-align: center;
 }
 
 h2 {
-    font-family: 'Permanent Marker', cursive;
     font-size: 32px;
-    font-weight: bolder;
+    font-weight: lighter;
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 18px;
     text-align: center;
 }
 
-section {
-    text-align: center;
+h3 {
+    font-size: 32px;
+    font-weight: lighter;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-legend {
-    font-size: 24px;
-    text-align: left;
+.page {
+    font-size: 48px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-left: 20px;
 }
 
-.js-goal-name {
-    font-size: 18px;
-    margin-bottom: 20px;
-    width: 100%;
+.red-dot {
+    color: red;
+    font-size: 80px;
 }
 
-.submit-new-goal {
+.line-break {
+    text-align: center;
+    margin-top: 10px;
+}
+
+legend {
+    font-size: 28px;
+    text-align: left;
+}
+
+.js-goal-name {
+    font-size: 24px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding-right: 5px;
+}
+
+.submit-new-goal, .submit-edited-goal {
     margin-top: 10px;
     background-color: black;
     width: 100%;
@@ -66,12 +82,13 @@ textarea {
     border-top-width: 1px;
     width: 100%;
     height: auto;
-    font-size: 18px;
+    font-size: 24px;
+    padding-right: 5px;
 }
 
 ul {
     list-style: none;
-    margin-top: 220px;
+    margin-top: 100px;
     margin-bottom: 80px;
     background-color: rgba(255, 255, 255, .8);
     border-radius: 20px;
@@ -82,16 +99,19 @@ ul {
     padding-bottom: 20px;
 }
 
-#new-goal, li {
-    margin-top: 220px;
-    margin-bottom: 80px;
+#new-goal, #edit-goal, li {
+    margin-top: 10px;
+    margin-bottom: 30px;
     background-color: rgba(255, 255, 255, .8);
     border-radius: 20px;
-    width: 80%;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px;
     padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 
 li {
@@ -102,14 +122,17 @@ li {
     margin-right: 40px;
     margin-left: 40px;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 20px;
+    color: red;
+    background-color: black;
 }
 
 nav {
     overflow: hidden;    
     position: fixed;
-    bottom: 0;
-    width: 100%
+    top: 40px;
+    width: 600px;
+    margin-left: 10px;
 }
 
 nav #js-new-goal {
@@ -123,7 +146,7 @@ nav #log-out {
 }
 
 .index {
-    margin-top: 220px;
+    margin-top: 130px;
     margin-bottom: 80px;
     background-color: rgba(255, 255, 255, .8);
     border-radius: 20px;
@@ -132,10 +155,48 @@ nav #log-out {
     margin-right: auto;
     padding-top: 10px;
     padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #register input, #log-in input {
     font-size: 20px;
-    width: 30%;
+    width: 31.5%;
     padding-left: 5px;
+    
+}
+
+#new-goal .js-goal-name, #new-goal .js-mantra, #edit-goal .js-goal-name, #edit-goal .js-mantra {
+    padding-left: 10px;
+} 
+
+.js-edit, .js-delete {
+    font-size: 20px;
+    width: 40%;
+    color: red;
+    background-color: black;
+}
+
+.mantra-header, .status-header {
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.mantras, #status {
+    font-size: 28px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.radios {
+    text-align: left;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.sign-up-button, .log-in-button {
+    color: red;
+    background-color: black;
 }

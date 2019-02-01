@@ -12,20 +12,26 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <h1>Goal Getter</h1>
-    <h2>My Goals</h2>
-
-    <section id="goals-list">
-        <ul id="my-goals">
-        </ul>
-    </section>
-
-    <nav>
-        <button onclick="newGoal()" id="js-new-goal">Commit to a new goal</button>
+<nav role="navigation">
+        <button onclick="newGoal()" id="js-new-goal">New goal</button>
         <button onclick="logOut()" id="log-out">Log-Out</button>
-    </nav>
+</nav>
+
+<header role="heading">
+    <h1>Goal Getter</h1>
+    <h2>Set goals, achieve dreams!</h2>
+</header>
+
+<body role="main">
+    <section class="line-break">
+            <span class="red-dot">&bull; &bull; &bull;
+    </section>
+    <p class="page">My goals</p>
+
+    <section id="goals-list" role="list">
+    </section>
 </body>
+
 <script src="app.js"></script>
 <script src="index.js"></script>
 <script src="home.js"></script>

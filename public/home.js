@@ -39,11 +39,16 @@ function displayGoals(responseJson) {
     for (let i =0; i < responseJson.goals.length; i++) {
         $("#goals-list").append(
             `<li>
-                <h2>${responseJson.goals[i].goal}</h2>
-                <h3>${responseJson.goals[i].mantra}</h3>
+                <h2><span class="red-star">★ </span>${responseJson.goals[i].goal}<span class="red-star"> ★</span></h2>
+                <p class="mantra-header">Mantra:</p>
+                <p class="mantras">${responseJson.goals[i].mantra}</p>
+                <p class="status-header">Status:</p>
                 <form id="status">
-                    <input class="in-progress" type="radio" name="goal-status" value="in-progress" ${responseJson.goals[i].status === 'inprogress' ? 'checked' : ''} data-id="${MOCK_STATUS_UPDATES.data[i].goalId}"> In-Progress</br>
-                    <input class="achieved" type="radio" name="goal-status" value="achieved" ${responseJson.goals[i].status === 'achieved' ? 'checked' : ''} data-id="${MOCK_STATUS_UPDATES.data[i].goalId}"> Achieved</br>
+                    <div class="radios">
+                        <input class="in-progress" type="radio" name="goal-status" value="in-progress" ${responseJson.goals[i].status === 'inprogress' ? 'checked' : ''} data-id="${MOCK_STATUS_UPDATES.data[i].goalId}"> In-Progress</input>
+                        </br>
+                        <input class="achieved" type="radio" name="goal-status" value="achieved" ${responseJson.goals[i].status === 'achieved' ? 'checked' : ''} data-id="${MOCK_STATUS_UPDATES.data[i].goalId}"> Achieved</input></br>
+                    </div>
                     <button class="js-edit" type="button" data-id="${responseJson.goals[i].id}">Edit Goal</button>
                     <button class="js-delete" type="button" data-id="${responseJson.goals[i].id}">Delete Goal</button>
                 </form>

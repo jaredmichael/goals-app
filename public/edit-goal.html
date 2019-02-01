@@ -9,22 +9,32 @@
     <link href="index.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
+
 </head>
 
-<body>
+<header role="heading">
     <h1>Goal Getter</h1>
-    <h2>Edit your Goal</h2>
-    <form id="edit-goal">
-        <legend>Goal you're going to accomplish</legend>
+    <h2>Set goals, achieve dreams!</h2>
+</header>
+
+<body role="main">
+    <section class="line-break">
+            <span class="red-dot">&bull; &bull; &bull;
+    </section>
+    <p class="page">edit goal</p>
+
+    <form id="edit-goal" role="form">
+        <legend>Goal you will accomplish</legend>
         <input type="text" name="goal-name" class="js-goal-name" value="Learn to code" required>
-        </br>
-        <legend>Mantra to reiterate your goal daily</legend></br>
+        <legend>Mantra to manifest your goal</legend>
         <textarea name="mantra" class="js-mantra" form="new-goal" required>I will accomplish my goal!</textarea>
         </br>
-        <input type="submit" class="submit-edited-goal" value="Submit">
+        <input type="submit" class="submit-edited-goal" value="Commit to your updated goal">
     </form>
 
 </body>
 
 <script src="index.js"></script>
+
 </html>
