@@ -59,13 +59,13 @@ function createGoal(goalName, mantraText) {
 
 
 function editGoal(goalId, goalName, mantraText) {
-    console.log(goalId, goalName, mantraText);
-    goalId = window.location.search.split('=')[1]
+    goalId = window.location.search.split('=')[1];
     const data = {
         id: goalId,
         goal: goalName,
         mantra: mantraText
     }
+    console.log(data);
     
     fetch('/api/goals/' + goalId, 
         {
@@ -174,7 +174,6 @@ function watchForm() {
         event.preventDefault();
         const goalName = $('.js-goal-name').val();
         const mantraText = $('.js-mantra').val();
-        const goalId = $('.js-id').val();
         editGoal(goalId, goalName, mantraText);
     });
 
@@ -185,7 +184,7 @@ function watchForm() {
 
     $(".js-edit").submit(event => {
         event.password();
-        editGoal(this.data);
+        editGoal(goalId, goalName, mantraText);
     });
 }
   

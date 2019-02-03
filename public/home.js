@@ -39,7 +39,7 @@ function displayGoals(responseJson) {
     for (let i =0; i < responseJson.goals.length; i++) {
         $("#goals-list").append(
             `<li>
-                <h2><span class="red-star">★ </span>${responseJson.goals[i].goal}<span class="red-star"> ★</span></h2>
+                <h2><span class="red-dot-title">&bull; </span>${responseJson.goals[i].goal}<span class="red-dot-title"> &bull;</span></h2>
                 <p class="mantra-header">Mantra:</p>
                 <p class="mantras">${responseJson.goals[i].mantra}</p>
                 <p class="status-header">Status:</p>
