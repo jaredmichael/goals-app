@@ -11,14 +11,30 @@ const jsonParser = bodyParser.json();
 const jwtAuth = passport.authenticate('jwt', {session: false});
 
 router.get('/', jwtAuth, (req, res) => {
+    console.log(req.user)
     GoalPost
-        .find()
-        .limit(10)
+        .find({
+            userId: req.user.id
+        })
         .then(goals => {
             res.json({
                 goals: goals.map(
                     (goals) => goals.serialize())
             });
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json({ message: 'Internal server error' });
+        });
+});
+
+router.get('/:id', jwtAuth, (req, res) => {
+    GoalPost
+        .findById(req.params.id)
+        .then(goal => {
+            res.json(
+                goal.serialize()
+            );
         })
         .catch(err => {
             console.error(err);
@@ -40,7 +56,8 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
     GoalPost
         .create({
             goal: req.body.goal,
-            mantra: req.body.mantra
+            mantra: req.body.mantra,
+            userId: req.user.id
         })
         .then(goal => res.status(201).json(goal.serialize()))
         .catch(err => {

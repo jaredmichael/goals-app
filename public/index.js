@@ -58,32 +58,6 @@ function createGoal(goalName, mantraText) {
 }
 
 
-function editGoal(goalId, goalName, mantraText) {
-    goalId = window.location.search.split('=')[1];
-    const data = {
-        id: goalId,
-        goal: goalName,
-        mantra: mantraText
-    }
-    console.log(data);
-    
-    fetch('/api/goals/' + goalId, 
-        {
-            method: 'PUT',
-            body: JSON.stringify(data),
-            headers: {'Content-Type': 'application/json',
-            'Authorization': 'bearer ' + localStorage.authToken}})
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error(response.statusText);
-    })
-    .then(responseJson => window.location='/home.html')
-    .catch(err => {
-        $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
-    });
-}
 
 function login(username, password) {
     console.log(username, password);
@@ -170,12 +144,7 @@ function watchForm() {
         createGoal(goalName, mantraText);
     });
 
-    $("#edit-goal").submit(event => {
-        event.preventDefault();
-        const goalName = $('.js-goal-name').val();
-        const mantraText = $('.js-mantra').val();
-        editGoal(goalId, goalName, mantraText);
-    });
+    
 
     $(".js-delete").submit(event => {
         event.preventDefault();
@@ -183,7 +152,7 @@ function watchForm() {
     });
 
     $(".js-edit").submit(event => {
-        event.password();
+        event.preventDefault();
         editGoal(goalId, goalName, mantraText);
     });
 }
