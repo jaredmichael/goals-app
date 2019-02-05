@@ -9,11 +9,15 @@
 
 html {
     background: url(images/goalboard.jpg) no-repeat center center fixed;
-    background-size: 640px 920px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 80px;
     font-weight: bolder;
     margin-bottom: 0px;
     margin-top: 70px;
@@ -129,9 +133,11 @@ li {
 }
 
 #js-new-goal, #log-out {
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-right: 80px;
+    margin-left: 80px;
     margin-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     font-size: 20px;
     color: red;
     background-color: black;
@@ -141,8 +147,9 @@ nav {
     overflow: hidden;    
     position: fixed;
     top: 40px;
-    width: 600px;
-    margin-left: 10px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav #js-new-goal {
@@ -160,7 +167,7 @@ nav #log-out {
     margin-bottom: 80px;
     background-color: rgba(255, 255, 255, .8);
     border-radius: 20px;
-    width: 80%;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px;
@@ -210,4 +217,83 @@ nav #log-out {
 .sign-up-button, .log-in-button {
     color: red;
     background-color: black;
+}
+
+
+@media only screen and (max-width: 500px) {
+.index {
+    width: 320px;
+    margin-top: 120px;
+}
+
+html {
+    width: 100%;
+}
+
+#new-goal, #edit-goal, li {
+    width: 320px;
+    margin-top: 0px;
+}
+
+#register input, #log-in input {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 48px;
+    width: 300px;
+    margin-top: 160px;
+}
+
+h2, h3 {
+    font-size: 24px;
+}
+
+.page {
+    font-size: 36px;
+    font-weight: lighter;
+}
+
+#js-new-goal, #log-out {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+    color: red;
+    background-color: black;
+}
+
+nav {
+    top: 60px;
+    right: 8px;
+    left: 8px;
+    width: 90%;
+}
+
+.red-dot {
+    font-size: 40px;
+}
+
+.red-dot-title {
+    font-size: 30px;
+}
+
+.mantra-header, .status-header, legend {
+    font-size: 18px;
+}
+
+.mantras, #status {
+    font-size: 24px;
+}
+
+.js-edit, .js-delete {
+    font-size: 18px;
+    width: 45%;
+}
+
+.submit-new-goal, .submit-edited-goal {
+    font-size: 16px;
+}
 }
