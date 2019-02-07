@@ -20,7 +20,7 @@ describe("Goal Posts", function() {
    it("should list goals on GET", function() {
        return chai
         .request(app)
-        .get("/goals")
+        .get("/api/goals")
         .then(function(res) {
             expect(res).to.have.status(200);
             expect(res).to.be.json;
@@ -45,7 +45,7 @@ describe("Goal Posts", function() {
 
        return chai
         .request(app)
-        .post("/goals")
+        .post("/api/goals")
         .send(newPost)
         .then(function(res) {
             expect(res).to.have.status(201);
@@ -61,7 +61,7 @@ describe("Goal Posts", function() {
        const badRequestData = {};
        return chai
             .request(app)
-            .post("/goals")
+            .post("/api/goals")
             .send(badRequestData)
             .then(function(res) {
                 expect(res).to.have.status(400);
@@ -72,7 +72,7 @@ describe("Goal Posts", function() {
        return (
            chai
            .request(app)
-           .get("/goals")
+           .get("/api/goals")
            .then(function(res) {
                const updatedGoal = Object.assign(res.body[0], {
                    goal: "Updated goal",
@@ -80,7 +80,7 @@ describe("Goal Posts", function() {
                });
                return chai
                 .request(app)
-                .put(`/goals/${res.body[0].id}`)
+                .put(`/api/goals/${res.body[0].id}`)
                 .send(updatedPost)
                 .then(function(res) {
                     expect(res).to.have.status(204);
@@ -93,11 +93,11 @@ describe("Goal Posts", function() {
        return (
            chai
             .request(app)
-            .get("/goals")
+            .get("/api/goals")
             .then(function(res) {
                 return chai
                     .request(app)
-                    .delete(`/goals/${res.body[0].id}`)
+                    .delete(`/api/goals/${res.body[0].id}`)
                     .then(function(res) {
                         expect(res).to.have.status(204);
                     });
@@ -114,7 +114,7 @@ describe("Goal Posts", function() {
 
        return chai
        .request(app)
-       .post("/users")
+       .post("/api/users")
        .send(newUser)
        .then(function(res) {
            expect(res).to.have.status(201);
