@@ -189,7 +189,7 @@ nav #log-out {
 } 
 
 .js-mantra, .js-goal-name {
-    color: lightslategray;
+    color: lightgray;
 }
 
 .js-edit, .js-delete {
