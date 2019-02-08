@@ -188,11 +188,21 @@ nav #log-out {
     padding-left: 10px;
 } 
 
+.js-mantra, .js-goal-name {
+    color: lightslategray;
+}
+
 .js-edit, .js-delete {
     font-size: 20px;
     width: 40%;
     color: red;
     background-color: black;
+}
+
+#js-error-message {
+    font-size: 20px;
+    color: red;
+    text-align: center;
 }
 
 .mantra-header, .status-header {
