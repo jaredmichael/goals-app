@@ -14,18 +14,22 @@ Register to create, update and delete goals you'd like to accomplish.  Create a 
 We believe that anything can be accomplished if a goal is set and it is accompanied with a confident state of mind.  We hope to inspire and help organize goals for everyone to achieve.
 
 ## Screenshots
-Login Screen/Landing Page:
 
-![login screen](public/images/index-page.png)
+Landing Page:
+
+![landing page](https://github.com/jaredmichael/goals-app/blob/master/screenshots/index-page.PNG)
 
 Goals List:
 
+![goals list](https://github.com/jaredmichael/goals-app/blob/master/screenshots/goals-home.PNG)
 
 Create New Goal:
 
+![new goal](https://github.com/jaredmichael/goals-app/blob/master/screenshots/new-goal.PNG)
 
 Edit Goal:
 
+![edit goal](https://github.com/jaredmichael/goals-app/blob/master/screenshots/edit-goal.PNG)
 
 ## Built With
 
@@ -44,5 +48,6 @@ Edit Goal:
 - [Live Demo](https://goal-getter-app.herokuapp.com/)
 
 ## Author
+
 
 * **Jared Juan**
