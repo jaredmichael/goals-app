@@ -12,12 +12,12 @@
         crossorigin="anonymous"></script>
 </head>
 
-<header role="heading">
+<header role="heading" aria-level="1">
     <h1>Goal Getter</h1>
     <h2>Set goals, achieve dreams!</h2>
 </header>
 
-<body role="main">
+<body>
     <section class="line-break">
             <span class="red-dot">&bull; &bull; &bull;
     </section>
@@ -25,9 +25,11 @@
 
     <form id="new-goal" role="form">
         <legend>Goal you will accomplish:</legend>
+        <label for="goal-name"></label>
         <input type="text" name="goal-name" class="js-goal-name" value="Learn to code" required>
         </br>
         <legend>Mantra to manifest your goal:</legend>
+        <label for="mantra"></label>
         <textarea name="mantra" class="js-mantra" form="new-goal" value="I can do this!" required></textarea>
         </br>
         <input type="submit" class="submit-new-goal" value="Commit to your new goal">
