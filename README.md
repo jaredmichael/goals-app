@@ -16,19 +16,16 @@ We believe that anything can be accomplished if a goal is set and it is accompan
 ## Screenshots
 Login Screen/Landing Page:
 
-![alt text](https://raw.githubusercontent.com/jaredmichael/goals-app/master/public/images/index-page.png)
+![login screen](public/images/index-page.png)
 
 Goals List:
 
-![alt text](https://github.com/jaredmichael/goals-app/blob/master/public/images/goals-home.png)
 
 Create New Goal:
 
-![alt text](https://github.com/jaredmichael/goals-app/blob/master/public/images/new-goal.png)
 
 Edit Goal:
 
-![alt text](https://github.com/jaredmichael/goals-app/blob/master/public/images/edit-goal.png)
 
 ## Built With
 
