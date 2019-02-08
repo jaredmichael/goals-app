@@ -2,14 +2,21 @@
 
 const chai = require("chai");
 const chaiHttp = require("chai-http");
+const jwt = require('jsonwebtoken');
+const {JWT_SECRET} = require('../config');
+
 
 const expect = chai.expect;
 
 const {app, runServer, closeServer} = require("../server");
+const {User} = require("../users/models")
 
 chai.use(chaiHttp);
 
 describe("Goal Posts", function() {
+    const username = 'exampleUser';
+    const password = 'examplePass';
+   
    before(function() {
        return runServer();
    });
@@ -17,10 +24,36 @@ describe("Goal Posts", function() {
        return closeServer();
    });
 
+   beforeEach(function() {
+    return User.hashPassword(password).then(password =>
+      User.create({
+        username,
+        password,
+      })
+    );
+  });
+
+  afterEach(function() {
+    return User.remove({});
+  });
+
    it("should list goals on GET", function() {
+
+    const token = jwt.sign(
+        {
+          username,
+        },
+        JWT_SECRET,
+        {
+          algorithm: 'HS256',
+          expiresIn: '7d'
+        }
+      );
+
        return chai
         .request(app)
         .get("/api/goals")
+        .set('Authorization', `Bearer ${token}`)
         .then(function(res) {
             expect(res).to.have.status(200);
             expect(res).to.be.json;
