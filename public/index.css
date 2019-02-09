@@ -188,10 +188,6 @@ nav #log-out {
     padding-left: 10px;
 } 
 
-.js-mantra, .js-goal-name {
-    color: lightgray;
-}
-
 .js-edit, .js-delete {
     font-size: 20px;
     width: 40%;
