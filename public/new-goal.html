@@ -8,35 +8,35 @@
     <title>New Goal</title>
     <link href="index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
-
-<header role="heading" aria-level="1">
+<header role="banner">
     <h1>Goal Getter</h1>
     <h2>Set goals, achieve dreams!</h2>
 </header>
+<section role="main">
 
-<body>
-    <section class="line-break">
+    <body>
+        <section class="line-break">
             <span class="red-dot">&bull; &bull; &bull;
-    </section>
-    <p class="page">Create your goal</p>
+        </section>
+        <p class="page">Create your goal</p>
 
-    <form id="new-goal" role="form">
-        <legend>Goal you will accomplish:</legend>
-        <label for="goal-name"></label>
-        <input type="text" name="goal-name" class="js-goal-name" value="Learn to code" required>
-        </br>
-        <legend>Mantra to manifest your goal:</legend>
-        <label for="mantra"></label>
-        <textarea name="mantra" class="js-mantra" form="new-goal" value="I can do this!" required></textarea>
-        </br>
-        <input type="submit" class="submit-new-goal" value="Commit to your new goal">
-    </form>
+        <form id="new-goal" role="form">
+            <legend>Goal you will accomplish:</legend>
+            <label for="goal-name"></label>
+            <input type="text" name="goal-name" class="js-goal-name" value="Learn to code" required>
+            </br>
+            <legend>Mantra to manifest your goal:</legend>
+            <label for="mantra"></label>
+            <textarea name="mantra" class="js-mantra" form="new-goal" value="I can do this!" required></textarea>
+            </br>
+            <input type="submit" class="submit-new-goal" value="Commit to your new goal">
+        </form>
 
-</body>
-
+    </body>
+</section>
 <script src="index.js"></script>
 
 </html>

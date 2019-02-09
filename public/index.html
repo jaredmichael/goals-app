@@ -7,47 +7,50 @@
     <meta http-quiv="X-UA-Compatible" content="ie=edge">
     <title>Goal Getter</title>
     <link href="index.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
 
 </head>
 
-<header role="heading" aria-level="1">
-    <h1>Goal Getter</h1>
-    <h2>Set goals, achieve dreams!</h2>
-</header>
+<section role="main">
 
-<body>
-    <section class="line-break">
-        <span class="red-dot">&bull; &bull; &bull;
-    </span>
-    </section>
-    <section class="index" role="form">
-        <form id="log-in">
-            <legend>Members</legend>
-            <label for="user-name"></label>
-            <input type="text" name="user-name" class="js-user-name-login" required>
+    <header role="banner">
+        <h1>Goal Getter</h1>
+        <h2>Set goals, achieve dreams!</h2>
+    </header>
 
-            <label for="password"></label>
-            <input type="password" name="password" class="js-password-login" required>
+    <body>
+        <section class="line-break">
+            <span class="red-dot">&bull; &bull; &bull;
+            </span>
+        </section>
+        <section class="index" role="form">
+            <form id="log-in">
+                <legend>Members</legend>
+                <label for="user-name"></label>
+                <input type="text" name="user-name" class="js-user-name-login" required>
 
-            <input class="log-in-button" type="submit" value="Log-In">
-        </form>
+                <label for="password"></label>
+                <input type="password" name="password" class="js-password-login" required>
 
-        <form id="register">
-            <legend>Register</legend>
-            <label for="user-name"></label>
-            <input type="text" name="user-name" class="js-user-name" required>
-            <label for="password"></label>
-            <input type="password" name="password" class="js-password" required>
+                <input class="log-in-button" type="submit" value="Log-In">
+            </form>
 
-            <input class="sign-up-button" type="submit" value="Sign-Up">
-        </form>
-    </section>
+            <form id="register">
+                <legend>Register</legend>
+                <label for="user-name"></label>
+                <input type="text" name="user-name" class="js-user-name" required>
+                <label for="password"></label>
+                <input type="password" name="password" class="js-password" required>
 
-    <p id="js-error-message" class="error-msg"></p>
-</body>
+                <input class="sign-up-button" type="submit" value="Sign-Up">
+            </form>
+        </section>
+
+        <p id="js-error-message" class="error-msg"></p>
+    </body>
+</section>
 
 <script src="index.js"></script>
 

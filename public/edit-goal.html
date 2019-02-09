@@ -7,37 +7,39 @@
     <meta http-quiv="X-UA-Compatible" content="ie=edge">
     <title>Goal Update</title>
     <link href="index.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
 
 </head>
+<section role="main">
 
-<header role="heading" aria-level="1">
-    <h1>Goal Getter</h1>
-    <h2>Set goals, achieve dreams!</h2>
-</header>
+    <header role="banner">
+        <h1>Goal Getter</h1>
+        <h2>Set goals, achieve dreams!</h2>
+    </header>
 
-<body>
-    <section class="line-break">
+    <body>
+        <section class="line-break">
             <span class="red-dot">&bull; &bull; &bull;
-    </section>
-    <p class="page">edit goal</p>
+        </section>
+        <p class="page">edit goal</p>
 
-    <form id="edit-goal" role="form">
-        <legend>Goal you will accomplish</legend>
-        <label for="goal-name"></label>
+        <form id="edit-goal" role="form">
+            <legend>Goal you will accomplish</legend>
+            <label for="goal-name"></label>
 
-        <input type="text" name="goal-name" class="js-goal-name" required>
-        
-        <legend>Mantra to manifest your goal</legend>
-        <label for="mantra"></label>
-        <textarea name="mantra" class="js-mantra" form="new-goal" required></textarea>
-        </br>
-        <input type="submit" class="submit-edited-goal" value="Commit to your updated goal">
-    </form>
+            <input type="text" name="goal-name" class="js-goal-name" required>
 
-</body>
+            <legend>Mantra to manifest your goal</legend>
+            <label for="mantra"></label>
+            <textarea name="mantra" class="js-mantra" form="new-goal" required></textarea>
+            </br>
+            <input type="submit" class="submit-edited-goal" value="Commit to your updated goal">
+        </form>
+
+    </body>
+</section>
 
 <script src="edit-goal.js"></script>
 

@@ -8,29 +8,32 @@
     <title>My Goals</title>
     <link href="index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 
-<nav role="navigation">
+<section role="main">
+
+    <nav role="navigation">
         <button onclick="newGoal()" id="js-new-goal">New goal</button>
         <button onclick="logOut()" id="log-out">Log-Out</button>
-</nav>
+    </nav>
 
-<header role="heading" aria-level="1">
-    <h1>Goal Getter</h1>
-    <h2>Set goals, achieve dreams!</h2>
-</header>
+    <header role="banner">
+        <h1>Goal Getter</h1>
+        <h2>Set goals, achieve dreams!</h2>
+    </header>
 
-<body>
-    <section class="line-break">
+    <body>
+        <section class="line-break">
             <span class="red-dot">&bull; &bull; &bull;</span>
-    </section>
-    <p class="page">My goals</p>
+        </section>
+        <p class="page">My goals</p>
 
-    <section id="goals-list" role="list">
-    </section>
-</body>
+        <section id="goals-list" role="list">
+        </section>
+    </body>
+</section>
 
 <script src="app.js"></script>
 <script src="index.js"></script>
