@@ -330,4 +330,9 @@ nav {
 .submit-new-goal, .submit-edited-goal {
     font-size: 16px;
 }
+
+.radios {
+    margin-left: 30px;
+
+}
 }
