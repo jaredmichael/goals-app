@@ -47,7 +47,8 @@ Edit Goal:
 
 - [Live Demo](https://goal-getter-app.herokuapp.com/)
 
-Login: demo
+Username: demo
+
 Password: demopass
 
 ## Author
