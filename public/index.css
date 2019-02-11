@@ -20,9 +20,9 @@ h1 {
     font-size: 80px;
     font-weight: bolder;
     margin-bottom: 0px;
-    margin-top: 10px;
+    margin-top: 30px;
     text-align: center;
-    width: 640px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -40,13 +40,13 @@ h3 {
     font-weight: lighter;
     margin-top: 0px;
     margin-bottom: 0px;
-    width: 640px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
 p {
-    width: 520px;
+    width: 75%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -60,7 +60,8 @@ p {
     text-align: center;
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .red-dot {
@@ -127,7 +128,7 @@ ul {
     margin-bottom: 30px;
     background-color: rgba(255, 255, 255, .8);
     border-radius: 20px;
-    width: 500px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px;
@@ -155,7 +156,7 @@ li {
 nav {
     overflow: hidden;    
     position: fixed;
-    top: 40px;
+    top: 5px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -233,6 +234,9 @@ nav #log-out {
     color: red;
     background-color: black;
 }
+
+
+
 
 
 @media only screen and (max-width: 500px) {
