@@ -45,6 +45,13 @@ h3 {
     margin-right: auto;
 }
 
+p {
+    width: 480px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;}
+
 .page {
     font-size: 48px;
     font-weight: bolder;
@@ -163,7 +170,7 @@ nav #log-out {
 }
 
 .index {
-    margin-top: 210px;
+    margin-top: 20px;
     margin-bottom: 80px;
     background-color: rgba(255, 255, 255, .8);
     border-radius: 20px;
