@@ -215,6 +215,7 @@ nav #log-out {
     font-size: 24px;
     margin-top: 0px;
     margin-bottom: 0px;
+    text-align: left;
 }
 
 .mantras, #status {
@@ -226,7 +227,7 @@ nav #log-out {
 
 .radios {
     text-align: left;
-    margin-left: 30px;
+    margin-left: 100px;
     margin-bottom: 10px;
 }
 
