@@ -45,7 +45,7 @@ Edit Goal:
 
 ## Demo
 
-- [Live Demo](https://goal-getter-app.herokuapp.com/)
+[Live Demo](https://goal-getter-app.herokuapp.com/)
 
 Username: demo
 
@@ -54,4 +54,4 @@ Password: demopass
 ## Author
 
 
-* **Jared Juan**
+**Jared Juan**
