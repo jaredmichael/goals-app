@@ -238,7 +238,7 @@ nav #log-out {
 @media only screen and (max-width: 500px) {
 .index {
     width: 320px;
-    margin-top: 120px;
+    margin-top: 20px;
 }
 
 html {
@@ -257,7 +257,7 @@ html {
 h1 {
     font-size: 48px;
     width: 300px;
-    margin-top: 160px;
+    margin-top: 60px;
 }
 
 h2, h3 {
@@ -276,6 +276,10 @@ p {
 .page {
     font-size: 36px;
     font-weight: lighter;
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #js-new-goal, #log-out {
@@ -290,9 +294,9 @@ p {
 }
 
 nav {
-    top: 60px;
-    right: 8px;
-    left: 8px;
+    top: 5px;
+    right: 5px;
+    left: 5px;
     width: 90%;
 }
 
