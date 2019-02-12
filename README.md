@@ -42,6 +42,8 @@ Edit Goal:
 * Mocha
 * Chai
 * Chai-http
+* Mongo
+* Mongoose
 
 ## Demo
 
