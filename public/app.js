@@ -36,7 +36,7 @@ var MOCK_STATUS_UPDATES = {
 };
 
 function getRecentStatusUpdates(callbackFn) {
-    setTimeout(function(){ callbackFn(MOCK_STATUS_UPDATES)}, 1);
+    setTimeout(function () { callbackFn(MOCK_STATUS_UPDATES) }, 1);
 }
 
 function displayStatusUpdates(data) {
@@ -50,6 +50,6 @@ function getAndDisplayStatusUpdates() {
     getRecentStatusUpdates(displayStatusUpdates);
 }
 
-$(function() {
+$(function () {
     getAndDisplayStatusUpdates();
 })

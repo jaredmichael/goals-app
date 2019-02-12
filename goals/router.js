@@ -8,7 +8,7 @@ const router = express.Router();
 
 const passport = require('passport')
 const jsonParser = bodyParser.json();
-const jwtAuth = passport.authenticate('jwt', {session: false});
+const jwtAuth = passport.authenticate('jwt', { session: false });
 
 router.get('/', jwtAuth, (req, res) => {
     GoalPost
@@ -57,7 +57,6 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
         })
         .then(goal => res.status(201).json(goal.serialize()))
         .catch(err => {
-            console.error(err);
             res.status(500).json({ message: 'Internal server error' });
         });
 });

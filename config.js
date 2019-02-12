@@ -3,7 +3,7 @@
 exports.DATABASE_URL = process.env.DATABASE_URL ||
     "mongodb://my-new-user:mnu_pw-001@ds255794.mlab.com:55794/goals"
 
-exports.TEST_DATABASE_URL || 
+exports.TEST_DATABASE_URL ||
     "mongodb://localhost/goals-app;"
 
 global.DATABASE_URL ||

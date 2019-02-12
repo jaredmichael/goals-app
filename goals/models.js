@@ -8,7 +8,7 @@ const goalPostSchema = mongoose.Schema({
     goal: { type: String, required: true },
     mantra: { type: String, required: true },
     created: { type: Date, default: Date.now },
-    status: {type: String}
+    status: { type: String }
 });
 
 goalPostSchema.methods.serialize = function () {

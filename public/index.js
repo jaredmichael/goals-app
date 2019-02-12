@@ -1,5 +1,4 @@
 function displayGoals(responseJson) {
-    console.log(responseJson);
     for (let I = 0; i < responseJson.data.length; i++) {
         $("#goals-list").append(
             `<li>
@@ -31,13 +30,11 @@ function getGoals() {
 }
 
 function createGoal(goalName, mantraText) {
-    console.log(goalName + mantraText);
     const data = {
         goal: goalName,
         mantra: mantraText,
         status: "inprogress"
     }
-
 
     return fetch('/api/goals',
         {
@@ -48,7 +45,6 @@ function createGoal(goalName, mantraText) {
                 'Authorization': 'bearer ' + localStorage.authToken
             }
         })
-
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -64,8 +60,6 @@ function createGoal(goalName, mantraText) {
 
 
 function login(username, password) {
-    console.log(username, password);
-
     const data = {
         username, password
     }

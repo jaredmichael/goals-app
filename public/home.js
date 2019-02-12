@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     getGoals();
     watchForm();
 })
@@ -6,11 +6,11 @@ $(function() {
 function getGoals() {
     fetch('/api/goals/', {
         method: 'GET',
-        headers: {'Authorization': 'bearer ' + localStorage.authToken}
+        headers: { 'Authorization': 'bearer ' + localStorage.authToken }
     })
         .then(response => {
             if (response.ok) {
-            return response.json();
+                return response.json();
             }
             throw new Error(response.statusText);
         })
@@ -21,8 +21,7 @@ function getGoals() {
 }
 
 function displayGoals(responseJson) {
-    console.log(responseJson);
-    for (let i =0; i < responseJson.goals.length; i++) {
+    for (let i = 0; i < responseJson.goals.length; i++) {
         $("#goals-list").append(
             `<li>
                 <h2><span class="red-dot-title">&bull; </span>${responseJson.goals[i].goal}
@@ -44,12 +43,13 @@ function displayGoals(responseJson) {
                     <button class="js-delete" type="button" data-id="${responseJson.goals[i].id}">Delete Goal</button>
                 </form>
             </li>`
-    )};
+        )
+    };
 };
 
 function editGoalForm(id) {
-    window.location='/edit-goal.html?id=' + id;
-    
+    window.location = '/edit-goal.html?id=' + id;
+
 }
 
 function editGoal(goalId, status) {
@@ -66,7 +66,6 @@ function editGoal(goalId, status) {
                 'Authorization': 'bearer ' + localStorage.authToken
             }
         })
-
         .then(response => {
             if (response.ok) {
                 window.location = '/home.html'
@@ -81,11 +80,11 @@ function editGoal(goalId, status) {
 function deleteGoal(id) {
     fetch('/api/goals/' + id, {
         method: 'DELETE',
-        headers: {'Authorization': 'bearer ' + localStorage.authToken}
+        headers: { 'Authorization': 'bearer ' + localStorage.authToken }
     })
         .then(response => {
             if (response.ok) {
-            location.reload();
+                location.reload();
             }
             throw new Error(response.statusText);
         })
@@ -104,7 +103,7 @@ function watchForm() {
 
     $('body').on('click', '.js-delete', event => {
         event.preventDefault();
-        const id = $(event.target).data("id");       
+        const id = $(event.target).data("id");
         deleteGoal(id);
     });
 

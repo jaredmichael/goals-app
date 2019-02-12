@@ -30,7 +30,6 @@ function watchForm() {
         .catch(err => {
             $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
         });
-
 }
 
 function editGoal(goalName, mantraText) {
@@ -40,7 +39,6 @@ function editGoal(goalName, mantraText) {
         goal: goalName,
         mantra: mantraText
     }
-    console.log(data);
 
     return fetch('/api/goals/' + goalId,
         {

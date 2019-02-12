@@ -12,28 +12,34 @@
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 
-<section role="main">
+<body>
+    <main role="main">
+        <nav role="navigation">
+            <button onclick="newGoal()" id="js-new-goal">New goal</button>
+            <button onclick="logOut()" id="log-out">Log-Out</button>
+        </nav>
 
-    <nav role="navigation">
-        <button onclick="newGoal()" id="js-new-goal">New goal</button>
-        <button onclick="logOut()" id="log-out">Log-Out</button>
-    </nav>
+        <header role="banner">
+            <h1>Goal Getter</h1>
+            <h2>Set goals, achieve dreams!</h2>
+        </header>
 
-    <header role="banner">
-        <h1>Goal Getter</h1>
-        <h2>Set goals, achieve dreams!</h2>
-    </header>
 
-    <body>
         <section class="line-break">
             <span class="red-dot">&bull; &bull; &bull;</span>
         </section>
         <p class="page">My goals</p>
 
+        <p>What is it that you want to accomplish?</br></br>Create your future achievements here
+            and become your best self.</br></br>Click New Goal above to get started or Log-Out and tackle the day.
+            </br>be a goal getter!
+        </p>
+
         <section id="goals-list" role="list">
         </section>
-    </body>
-</section>
+    </main>
+</body>
+
 
 <script src="app.js"></script>
 <script src="index.js"></script>
