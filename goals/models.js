@@ -7,7 +7,8 @@ const goalPostSchema = mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     goal: { type: String, required: true },
     mantra: { type: String, required: true },
-    created: { type: Date, default: Date.now }
+    created: { type: Date, default: Date.now },
+    status: {type: String}
 });
 
 goalPostSchema.methods.serialize = function () {
@@ -15,7 +16,8 @@ goalPostSchema.methods.serialize = function () {
         id: this._id,
         goal: this.goal,
         mantra: this.mantra,
-        created: this.created
+        created: this.created,
+        status: this.status
     };
 };
 
