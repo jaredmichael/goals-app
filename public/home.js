@@ -21,6 +21,7 @@ function getGoals() {
 }
 
 function displayGoals(responseJson) {
+    $("#goals-list").empty();
     for (let i = 0; i < responseJson.goals.length; i++) {
         $("#goals-list").append(
             `<li>
@@ -31,16 +32,18 @@ function displayGoals(responseJson) {
                 <p class="status-header">Status:</p>
                 <form id="status">
                     <div class="radios">
-                        <input class="in-progress" type="radio" name="goal-status" value="in-progress" 
-                        ${responseJson.goals[i].status === 'inprogress' ? 'checked' : ''} 
+                        <input class="in-progress" type="radio" name="goal-status" checked value="in-progress" 
+                        ${responseJson.goals[i].status === 'inprogress' ? 'checked' : ''}
                         data-id="${responseJson.goals[i].id}"> In-Progress</input>
                         </br>
                         <input class="achieved"  type="radio" name="goal-status" value="achieved" 
                         ${responseJson.goals[i].status === 'achieved' ? 'checked' : ''} 
                         data-id="${responseJson.goals[i].id}"> Achieved</input></br>
                     </div>
-                    <button class="js-edit" type="button" data-id="${responseJson.goals[i].id}">Edit Goal</button>
-                    <button class="js-delete" type="button" data-id="${responseJson.goals[i].id}">Delete Goal</button>
+                    <div class="goal-buttons">
+                        <button class="js-edit" type="button" data-id="${responseJson.goals[i].id}">Edit Goal</button>
+                        <button class="js-delete" type="button" data-id="${responseJson.goals[i].id}">Delete Goal</button>
+                    </div>
                 </form>
             </li>`
         )
@@ -66,12 +69,6 @@ function editGoal(goalId, status) {
                 'Authorization': 'bearer ' + localStorage.authToken
             }
         })
-        .then(response => {
-            if (response.ok) {
-                window.location = '/home.html'
-            }
-            throw new Error(response.statusText);
-        })
         .catch(err => {
             $('#js-error-message').text(`Oops! Something went wrong: ${err.message}`);
         });
@@ -84,7 +81,7 @@ function deleteGoal(id) {
     })
         .then(response => {
             if (response.ok) {
-                location.reload();
+                getGoals();
             }
             throw new Error(response.statusText);
         })

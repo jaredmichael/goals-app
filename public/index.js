@@ -120,6 +120,7 @@ function newGoal() {
 }
 
 function logOut() {
+    localStorage.clear();
     window.location = '/index.html';
 }
 

@@ -20,7 +20,7 @@ h1 {
     font-size: 80px;
     font-weight: bolder;
     margin-bottom: 0px;
-    margin-top: 30px;
+    margin-top: 60px;
     text-align: center;
     width: 80%;
     margin-left: auto;
@@ -98,7 +98,12 @@ legend {
     font-size: 24px;
     padding-top: 6px;
     padding-bottom: 6px;
-    color: red;
+    color: white;
+    border: 0px;
+}
+
+.goal-buttons {
+    text-align: center;
 }
 
 textarea {
@@ -114,7 +119,7 @@ ul {
     list-style: none;
     margin-top: 100px;
     margin-bottom: 80px;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, .9);
     border-radius: 20px;
     width: 80%;
     margin-left: auto;
@@ -126,7 +131,7 @@ ul {
 #new-goal, #edit-goal, li {
     margin-top: 10px;
     margin-bottom: 30px;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, .9);
     border-radius: 20px;
     width: 80%;
     margin-left: auto;
@@ -143,13 +148,14 @@ li {
 }
 
 #js-new-goal, #log-out {
-    margin-right: 80px;
-    margin-left: 80px;
+    margin-right: 20px;
+    margin-left: 10px;
     margin-bottom: 20px;
     padding-left: 40px;
     padding-right: 40px;
     font-size: 20px;
-    color: red;
+    color: white;
+    border: 0px;
     background-color: black;
 }
 
@@ -160,22 +166,21 @@ nav {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 nav #js-new-goal {
-    float: left;
-    display: block;
+    display: inline-block;
 }
 
 nav #log-out {
-    float: right;
-    display: block;
+    display: inline-block;
 }
 
 .index {
     margin-top: 50px;
     margin-bottom: 80px;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, .9);
     border-radius: 20px;
     width: 500px;
     margin-left: auto;
@@ -201,7 +206,8 @@ nav #log-out {
 .js-edit, .js-delete {
     font-size: 20px;
     width: 40%;
-    color: red;
+    color: white;
+    border: 0px;
     background-color: black;
 }
 
@@ -222,7 +228,7 @@ nav #log-out {
     font-size: 28px;
     margin-top: 0px;
     margin-bottom: 0px;
-    text-align: center;
+    text-align: left;
 }
 
 .radios {
@@ -236,6 +242,9 @@ nav #log-out {
     background-color: black;
 }
 
+.js-user-name, .js-user-name-login {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 
 
@@ -288,13 +297,13 @@ p {
 }
 
 #js-new-goal, #log-out {
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
     margin-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 18px;
-    color: red;
+    color: white;
     background-color: black;
 }
 
