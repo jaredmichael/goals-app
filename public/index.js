@@ -140,6 +140,13 @@ function watchForm() {
         signUp(userName, password);
     });
 
+    $('#demo-login').submit(event => {
+        event.preventDefault();
+        const userName = 'demo';
+        const password = 'demopass';
+        login(userName, password);
+    });
+
     $("#new-goal").submit(event => {
         event.preventDefault();
         const goalName = $('.js-goal-name').val();
