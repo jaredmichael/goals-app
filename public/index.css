@@ -189,7 +189,22 @@ nav #log-out {
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
+}
 
+.demo {
+    margin-bottom: 80px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+input.demo-login-button {
+    width: 140px;
+    font-size: 28px;
 }
 
 #register input, #log-in input {
